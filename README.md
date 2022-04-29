@@ -1,73 +1,47 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /><a>
-</p>
+## Welcome to the TeleScan&trade; Microservices Takehome Assignment
+First off, thank you for taking the time to work on this assignment. TeleScan&trade; is a quickly growing startup with a development team that manages dynamic requirements and we're looking to bring on sharp engineers that want to work on today's latest stable frameworks. As such we utilizes [Nest](https://github.com/nestjs/nest) for our microservices architecture and Redis for our service-to-service communication along with a host of other tools to create exciting new technology that is expanding access to ultrasound imaging in underserved communities.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## The Assignment
+We'd like to see you build out a simple microservice API framework using NestJS which contains 2 services and 4 data models of varying relations. The services should communicate via Redis. As an API we expect to see basic CRUD (Create, Read, Update, Delete) operations. Everything else is up to you and your creative mind. Feel free to WOW! us by adding unit tests, cascading deletion, code optimization, etc. We have outlined the services and data models below. Feel free to expand upon this architecture, just make sure to at least include what is listed.
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+### Service 1 Data Models
+```
+Doctor = {
+  id: string,
+  first_name: string,
+  last_name: string,
+}
+```
+```
+Patient = {
+  id: string,
+  first_name: string,
+  last_name: string,
+  dob: number
+}
 ```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+### Service 2 Data Models
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+Study = {
+  id: string,
+  study_date: number
+}
 ```
+```
+Instance = {
+  measurment: string,
+  image_url: string
+}
+```
+### Model Relations
+Doctor is one-to-many with Patient
+Patient is one-to-one with Study
+Doctor is many-to-many with Study
+Study is one-to-many with Instance
 
-## Support
+## What Are We Looking For?
+We like this type of technical review for candidates because it allows you to write code in the most realistic setting as you would on our team -- asynchronously and with your tools of choice. We've tried to keep the assignment relatively simple to be respectful of your time while still providing the opportunity showcase your skills. As such we like seeing clean, succinct code that is performant and maintainable.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## The Next Step
+Once you've completed your application please push your repo(s) to Github and share the link(s) with your point of contact at TeleScan&trade;. We will review your code and schedule a time for you to review with one of our senior developers.
