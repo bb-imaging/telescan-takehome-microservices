@@ -35,10 +35,10 @@ Instance = {
 }
 ```
 ### Model Relations
-Doctor is one-to-many with Patient
-Patient is one-to-one with Study
-Doctor is many-to-many with Study
-Study is one-to-many with Instance
+Doctor is *one-to-many* with Patient <br />
+Patient is *one-to-one* with Study <br />
+Doctor is *many-to-many* with Study <br />
+Study is *one-to-many* with Instance
 
 ## What Are We Looking For?
 We like this type of technical review for candidates because it allows you to write code in the most realistic setting as you would on our team -- asynchronously and with your tools of choice. We've tried to keep the assignment relatively simple to be respectful of your time while still providing the opportunity showcase your skills. As such we like seeing clean, succinct code that is performant and maintainable.
